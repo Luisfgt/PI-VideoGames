@@ -56,6 +56,7 @@ const getAllVideogames = async (req, res) => {
             const platformsApi = videogame.platforms.map(platform => platform.platform.name).join(', ')
             const genresApi = videogame.genres.map(genre => genre.name).join(', ')
             const description = (await axios.get(`${URL_API}/${videogame.id}${API_KEY}`)).data.description
+            
 
             return {
                 id: videogame.id,
